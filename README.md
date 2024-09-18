@@ -10,7 +10,7 @@ This is a MagicMirror² module which displays the standings for your NFL Fantasy
 
 ```bash
 cd ~/MagicMirror/modules
-git clone https://github.com/voldo42/SleeperNFLStandings
+git clone https://github.com/voldo42/MMM-SleeperNFLStandings
 cd MMM-SleeperNFLStandings
 npm install
 ```
