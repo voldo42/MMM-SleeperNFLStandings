@@ -1,0 +1,14 @@
+td, th {
+    padding-top: 5px;
+    padding-right: 15px;
+}
+
+.wider-padding {
+    padding-right: 50px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
