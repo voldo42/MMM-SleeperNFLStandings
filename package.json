@@ -1,0 +1,31 @@
+{
+  "name": "mmm-sleeper-nfl-standings",
+  "version": "1.3.1",
+  "description": "National Fantasy Football League Module for MagicMirror2",
+  "scripts": {
+    "lint": "eslint . && stylelint **/*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voldo42/MMM-SleeperNFLStandings.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "NFL"
+  ],
+  "author": "jimswetman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/voldo42/MMM-SleeperNFLStandings/issues"
+  },
+  "homepage": "https://github.com/voldo42/MMM-SleeperNFLStandings#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-recommended": "^4.1.0",
+    "stylelint": "^14.3.0",
+    "stylelint-config-standard": "^24.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "2.6.7"
+  }
+}
