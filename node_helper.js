@@ -9,7 +9,7 @@ module.exports = NodeHelper.create({
 
   async socketNotificationReceived(notification, payload) {
 
-    if (notification === "STANDINGS_REQUEST") {
+    if (notification === `STANDINGS_REQUEST_${payload.leagueId}`) {
       this.reloadInterval = setInterval(() => {
         this.getData(payload.leagueId);
       }, payload.reloadInterval);
@@ -49,7 +49,7 @@ module.exports = NodeHelper.create({
         standings: orderedTeams        
       };
 
-      this.sendSocketNotification("STANDINGS_RESPONSE", response);
+      this.sendSocketNotification(`STANDINGS_RESPONSE_${leagueId}`, response);
     } catch (error) {
       Log.error(`Error getting Sleeper data ${error}`);
     }

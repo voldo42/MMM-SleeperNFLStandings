@@ -23,14 +23,14 @@ Module.register("MMM-SleeperNFLStandings", {
 
   start() {
     Log.info(`Starting module: ${this.name}`);
-    this.sendSocketNotification("STANDINGS_REQUEST", {
+    this.sendSocketNotification(`STANDINGS_REQUEST_${this.config.leagueId}`, {
       reloadInterval: this.config.reloadInterval,
       leagueId: this.config.leagueId
     });
   },
 
   socketNotificationReceived(notification, payload) {
-    if (notification === "STANDINGS_RESPONSE") {
+    if (notification === `STANDINGS_RESPONSE_${this.config.leagueId}`) {
       this.week = payload.week;
       this.season = payload.season;
       this.league = payload.league;
