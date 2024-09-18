@@ -1,14 +1,17 @@
 td, th {
-    padding-top: 5px;
-    padding-right: 15px;
+    padding-right: 10px;
 }
 
 .wider-padding {
-    padding-right: 50px;
+    padding-right: 30px;
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
+}
+
+.league-avatar-spacing {
+    margin-right: 15px;
 }
