@@ -61,7 +61,7 @@ async function getLeagueUser(leagueId, userId) {
     const team = parsedResponse.find((x) => x.user_id == userId);
     const user = {
       teamName: team?.metadata.team_name ?? "Team " + team?.display_name,
-      avatar: AvatarThumbUri + team?.avatar
+      avatar: team?.metadata.avatar ?? AvatarThumbUri + team?.avatar
     };
 
     return user;
