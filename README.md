@@ -22,7 +22,7 @@ Add the following code to your ~/MagicMirror/config/config.js:
 ```js
 {
   module: "MMM-SleeperNFLStandings",
-  position: "top_left"
+  position: "top_left",
   config: {
     leagueId: [yourLeagueId]
   }
