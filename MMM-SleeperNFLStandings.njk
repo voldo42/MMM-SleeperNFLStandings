@@ -1,6 +1,3 @@
-{% if not standings %}
-    <div class="dimmed light">Loading...</div>
-{% else %}
 <header>
     <img src="{{ league.avatar }}" alt="{{ league.name }} logo" class="avatar league-avatar-spacing"> 
     {{ league.name }} - week {{ week }} ({{ season }})
@@ -44,7 +41,7 @@
                         {{ team.teamName }}
                     </td>
                     <td>
-                        {{ team.wins }}-{{ team.losses }}-{{ team.ties }}
+                        {{ team.wins }}-{{ team.losses }}
                     </td>
                     {% if 'ptsFor' not in config.excludeColumns %}
                         <td>

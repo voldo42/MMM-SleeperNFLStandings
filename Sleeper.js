@@ -94,14 +94,18 @@ async function getRosters(leagueId) {
     const parsedResponse = await response.json();
 
     const rosters = parsedResponse.map((team) => {
+
+        let ptsFor = `${team?.settings.fpts}.${team?.settings.fpts_decimal}`;
+        let ptsAgainst = `${team?.settings.fpts_against}.${team?.settings.fpts_against_decimal}`;
+
         return {
           rosterId: team?.roster_id,
           userId: team?.owner_id,
           wins: team?.settings.wins,
           losses: team?.settings.losses,
           ties: team?.settings.ties,
-          ptsFor: `${team?.settings.fpts}.${team?.settings.fpts_decimal}`,
-          ptsAgainst: `${team?.settings.fpts_against}.${team?.settings.fpts_against_decimal}`,
+          ptsFor: parseFloat(ptsFor).toFixed(2),
+          ptsAgainst: parseFloat(ptsAgainst).toFixed(2),
           waiverPosition: team?.settings.waiver_position
         };
     });
