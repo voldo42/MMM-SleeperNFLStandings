@@ -105,7 +105,7 @@ async function getRosters(leagueId) {
           losses: team?.settings.losses,
           ties: team?.settings.ties,
           ptsFor: parseFloat(ptsFor).toFixed(2),
-          ptsAgainst: parseFloat(ptsFor).toFixed(2),
+          ptsAgainst: parseFloat(ptsAgainst).toFixed(2),
           waiverPosition: team?.settings.waiver_position
         };
     });
