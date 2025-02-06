@@ -24,7 +24,10 @@ Add the following code to your ~/MagicMirror/config/config.js:
   module: "MMM-SleeperNFLStandings",
   position: "top_left",
   config: {
-    leagueId: [yourLeagueId]
+    leagueId: [yourLeagueId],
+				showTableHeaders: false,
+				excludeColumns: ["rank", "ptsAgainst", "waiverPosition"]
+			}
   }
 },
 ```
