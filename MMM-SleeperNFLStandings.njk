@@ -2,64 +2,63 @@
     <img src="{{ league.avatar }}" alt="{{ league.name }} logo" class="avatar league-avatar-spacing"> 
     {{ league.name }} - week {{ week }} ({{ season }})
 </header>
-   <table class="table">
-        <thead>
-            {% if config.showTableHeaders %}
-                <tr>
-                    {% if 'avatar' not in config.excludeColumns %}
-                        <th></th>
-                    {% endif %}
-                    {% if 'rank' not in config.excludeColumns %}
-                        <th></th>
-                    {% endif %}
+<table class="table">
+    <thead>
+        {% if config.showTableHeaders %}
+            <tr>
+                {% if 'avatar' not in config.excludeColumns %}
                     <th></th>
-                    <th class="wider-padding"></th>
-                    <th>PF</th>
-                    {% if 'ptsAgainst' not in config.excludeColumns %}
-                        <th>PA</th>
-                    {% endif %}
-                    {% if 'waiverPosition' not in config.excludeColumns %}
-                        <th>Waiver</th>
-                    {% endif %}
-                </tr>
-            {% endif %}
-        </thead>
-        <tbody>
-            {% for team in standings %}
-                <tr class="row">
-                    {% if 'avatar' not in config.excludeColumns %}
-                        <td>
-                            <img src="{{ team.avatar }}" alt="{{ team.teamName }} logo" class="avatar">
-                        </td>
-                    {% endif %}
-                    {% if 'rank' not in config.excludeColumns %}
-                        <td>
-                            {{ team.rank }}
-                        </td>
-                    {% endif %}
+                {% endif %}
+                {% if 'rank' not in config.excludeColumns %}
+                    <th></th>
+                {% endif %}
+                <th></th>
+                <th class="wider-padding"></th>
+                <th>PF</th>
+                {% if 'ptsAgainst' not in config.excludeColumns %}
+                    <th>PA</th>
+                {% endif %}
+                {% if 'waiverPosition' not in config.excludeColumns %}
+                    <th>Waiver</th>
+                {% endif %}
+            </tr>
+        {% endif %}
+    </thead>
+    <tbody>
+        {% for team in standings %}
+            <tr class="row">
+                {% if 'avatar' not in config.excludeColumns %}
                     <td>
-                        {{ team.teamName }}
+                        <img src="{{ team.avatar }}" alt="{{ team.teamName }} logo" class="avatar">
                     </td>
+                {% endif %}
+                {% if 'rank' not in config.excludeColumns %}
                     <td>
-                        {{ team.wins }}-{{ team.losses }}
+                        {{ team.rank }}
                     </td>
-                    {% if 'ptsFor' not in config.excludeColumns %}
-                        <td>
-                            {{ team.ptsFor }}
-                        </td>
-                    {% endif %}
-                    {% if 'ptsAgainst' not in config.excludeColumns %}
-                        <td>
-                            {{ team.ptsAgainst }}
-                        </td>
-                    {% endif %}
-                    {% if 'waiverPosition' not in config.excludeColumns %}
-                        <td>
-                            <center>{{ team.waiverPosition }}</center>
-                        </td>
-                    {% endif %}
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endif %}
+                {% endif %}
+                <td>
+                    {{ team.teamName }}
+                </td>
+                <td>
+                    {{ team.wins }}-{{ team.losses }}
+                </td>
+                {% if 'ptsFor' not in config.excludeColumns %}
+                    <td>
+                        {{ team.ptsFor }}
+                    </td>
+                {% endif %}
+                {% if 'ptsAgainst' not in config.excludeColumns %}
+                    <td>
+                        {{ team.ptsAgainst }}
+                    </td>
+                {% endif %}
+                {% if 'waiverPosition' not in config.excludeColumns %}
+                    <td>
+                        <center>{{ team.waiverPosition }}</center>
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
